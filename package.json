@@ -1,0 +1,31 @@
+{
+  "name": "body-mass-index-calculator",
+  "version": "1.0.0",
+  "description": "A Body Mass Index Calculator",
+  "main": "index.js",
+  "scripts": {
+    "watch:scss": "sass -w code/styles/styles.scss code/styles/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olaide-hok/bmi-calculator.git"
+  },
+  "keywords": [
+    "HTML",
+    "CSS",
+    "SASS",
+    "JS"
+  ],
+  "author": "Habeeb Kareem",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/olaide-hok/bmi-calculator.git/issues"
+  },
+  "homepage": "https://github.com/olaide-hok/bmi-calculator.git#readme",
+  "dependencies": {
+    "sass": "^1.83.4"
+  },
+  "devDependencies": {
+    "@awmottaz/prettier-plugin-void-html": "^1.7.0"
+  }
+}
