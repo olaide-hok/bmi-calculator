@@ -137,3 +137,21 @@ $spacing-1800: rem(144px);
   align-items: center;
   justify-content: center;
 }
+
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-col {
+  @include flex-col;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-row {
+  @include flex-row;
+}
