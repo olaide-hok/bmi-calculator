@@ -1,0 +1,224 @@
+@font-face {
+  font-family: "Inter";
+  src: url(../assets/fonts/Inter-VariableFont_slnt_wght.ttf);
+}
+.text-preset-1-semiBold {
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 110%;
+  letter-spacing: -5%;
+}
+
+.text-preset-2-semiBold {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 110%; /* 52.8px */
+  letter-spacing: -0.15rem;
+}
+
+.text-preset-3-semiBold {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 110%; /* 35.2px */
+  letter-spacing: -0.1rem;
+}
+
+.text-preset-4-semiBold {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.8125rem; /* 120.833% */
+  letter-spacing: -0.075rem;
+}
+
+.text-preset-5-semiBold {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 150%; /* 30px */
+  letter-spacing: -1px;
+}
+
+.text-preset-6-semiBold {
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.text-preset-6-regular {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 150%; /* 24px */
+}
+
+.text-preset-7-bold {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 150%; /* 21px */
+}
+
+.text-preset-7-regular {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* General body styling */
+body {
+  position: relative; /* Ensures the body is positioned relative to its normal flow */
+  display: flex; /* Enables flexbox layout */
+  justify-content: center; /* Centers content horizontally */
+  min-height: 100vh; /* Ensures the body takes up at least the full viewport height */
+  font-family: "Inter";
+  font-style: normal;
+  line-height: normal;
+  background: white;
+  font-feature-settings: "liga" off, "clig" off;
+}
+
+/* Media query for screens with a width of up to 375px */
+@media screen and (max-width: 375px) {
+  body {
+    min-height: 100%; /* Ensures the body takes up at least the full height of its parent container */
+  }
+}
+.d-none {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+button {
+  border: none;
+  background: none;
+}
+button:hover {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+main.container {
+  max-width: 1440px;
+}
+main.container .hero {
+  flex-direction: column;
+  row-gap: 2rem;
+  padding: 2rem 1.5rem 3.8125rem;
+  align-items: center;
+  justify-content: center;
+}
+main.container .hero .info-cards {
+  flex-direction: column;
+  row-gap: 2rem;
+}
+main.container .hero .info-cards .hero-content {
+  flex-direction: column;
+  row-gap: 1.5rem;
+  text-align: center;
+}
+main.container .hero .info-cards .hero-content .title {
+  color: #253347;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 110%; /* 52.8px */
+  letter-spacing: -0.15rem;
+}
+main.container .hero .info-cards .hero-content .desc {
+  color: #5e6e85;
+}
+main.container .hero .info-cards .form {
+  border-radius: 1rem;
+  box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  padding: 1.5rem;
+}
+main.container .hero .info-cards .form .instruction {
+  color: #253347;
+}
+main.container .hero .info-cards .form form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+main.container .hero .info-cards .form form .radio-wrapper {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1.5rem;
+}
+main.container .hero .info-cards .form form .radio-wrapper div {
+  flex: 1;
+}
+main.container .hero .info-cards .form form .radio-wrapper div label {
+  color: #253347;
+}
+main.container .hero .info-cards .form form .input-wrapper {
+  flex-direction: column;
+  row-gap: 1rem;
+}
+main.container .hero .info-cards .form form .input-wrapper label {
+  color: #5e6e85;
+}
+main.container .hero .info-cards .form .result {
+  border-radius: 1rem;
+  background: #345ff6;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+  padding: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  main.container .hero {
+    flex-direction: column;
+    row-gap: 2.5rem;
+    padding: 2rem 2.625rem 1.1875rem 2.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+  main.container .hero .info-cards {
+    row-gap: 2.5rem;
+  }
+  main.container .hero .info-cards .form {
+    row-gap: 2rem;
+    padding: 2rem;
+  }
+  main.container .hero .info-cards .form form {
+    row-gap: 1.5rem;
+  }
+  main.container .hero .info-cards .form form .input-wrapper {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1.5rem;
+  }
+  main.container .hero .info-cards .form .result {
+    border-radius: 16px 999px 999px 16px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  main.container {
+    max-width: 1440px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -51,15 +51,130 @@ ul {
   list-style-type: none;
 }
 
+main {
+  &.container {
+    max-width: 1440px;
+
+    .hero {
+      flex-direction: column;
+      row-gap: $spacing-400;
+      padding: 2rem 1.5rem rem(61px);
+      align-items: center;
+      justify-content: center;
+
+      .info-cards {
+        flex-direction: column;
+        row-gap: $spacing-400;
+
+        .hero-content {
+          flex-direction: column;
+          row-gap: $spacing-300;
+          text-align: center;
+
+          .title {
+            color: $blue-900;
+            @include text-preset-2-semiBold;
+          }
+
+          .desc {
+            color: $grey-500;
+          }
+        }
+
+        .form {
+          border-radius: 1rem;
+          box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+          @include flex-col;
+          row-gap: $spacing-300;
+          padding: $spacing-300;
+
+          .instruction {
+            color: $blue-900;
+          }
+
+          form {
+            @include flex-col;
+            row-gap: $spacing-300;
+
+            .radio-wrapper {
+              @include flex-row;
+              column-gap: $spacing-300;
+
+              div {
+                flex: 1;
+                label {
+                  color: $blue-900;
+                }
+              }
+            }
+
+            .input-wrapper {
+              flex-direction: column;
+              row-gap: $spacing-200;
+
+              label {
+                color: $grey-500;
+              }
+            }
+          }
+
+          .result {
+            border-radius: 1rem;
+            background: $blue-500;
+            color: $white;
+            @include flex-col;
+            row-gap: $spacing-300;
+            padding: $spacing-400;
+          }
+        }
+      }
+    }
+  }
+}
 
 @media screen and (min-width: 768px) {
- 
+  main {
+    &.container {
+      .hero {
+        flex-direction: column;
+        row-gap: $spacing-500;
+        padding: rem(32px) rem(42px) rem(19px) rem(40px);
+        align-items: center;
+        justify-content: center;
+
+        .info-cards {
+          row-gap: $spacing-500;
+
+          .form {
+            row-gap: $spacing-400;
+            padding: $spacing-400;
+
+            form {
+              row-gap: $spacing-300;
+
+              .input-wrapper {
+                @include flex-row;
+                column-gap: $spacing-300;
+              }
+            }
+
+            .result {
+              border-radius: 16px 999px 999px 16px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 1024px) {
-
 }
 
 @media screen and (min-width: 1440px) {
-
+  main {
+    &.container {
+      max-width: 1440px;
+    }
+  }
 }
