@@ -18,50 +18,60 @@
   </head>
   <body>
     <main class="container">
-      <div class="hero">
+      <div class="d-flex hero">
         <!-- Logo -->
         <div class="logo-wrapper">
           <img src="./code/assets/images/logo.svg" alt="bmi logo">
         </div>
-        <div class="info-cards">
+        <div class="d-flex info-cards">
           <!-- BMI Calc -->
-          <section class="card-1">
+          <section class="d-flex hero-content">
             <h1 class="title">Body Mass Index Calculator</h1>
-            <p class="copy">
+            <p class="copy text-preset-6-regular">
               Better understand your weight in relation to your height using our
               body mass index (BM) calculator. While BMI is not the sole
               determinant of a healthy weight, it offers a valuable starting
               point to evaluate your overall health and well-being.
             </p>
           </section>
-          <!-- input section -->
-          <section class="card">
-            <h4 class="instruction">Enter your details below Metric</h4>
+          <!-- input and result section -->
+          <section class="d-flex form">
+            <h4 class="instruction text-preset-4-semiBold">
+              Enter your details below Metric
+            </h4>
             <form>
               <div class="radio-wrapper">
                 <div>
                   <input type="radio" name="metric" id="metric">
-                  <label for="metric">Metric</label>
+                  <label class="text-preset-6-semiBold" for="metric"
+                    >Metric</label
+                  >
                 </div>
                 <div>
                   <input type="radio" name="imperial" id="imperial">
-                  <label for="imperial">Imperial</label>
+                  <label class="text-preset-6-semiBold" for="imperial"
+                    >Imperial</label
+                  >
                 </div>
               </div>
               <div class="input-wrapper">
-                <div class="">
-                  <label for="height">Height</label>
+                <div class="flex-col">
+                  <label class="text-preset-7-regular" for="height"
+                    >Height</label
+                  >
                   <input type="number" name="height" id="height">
                 </div>
-                <div class="">
-                  <label for="weight">Weight</label>
+                <div class="flex-col">
+                  <label class="text-preset-7-regular" for="weight"
+                    >Weight</label
+                  >
                   <input type="number" name="weight" id="weight">
                 </div>
               </div>
             </form>
             <div class="result">
-              <h4>Welcome!</h4>
-              <p>
+              <h4 class="text-preset-4-semiBold">Welcome!</h4>
+              <p class="text-preset-7-regular">
                 Enter your height and weight and you’ll see your BMI result here
               </p>
             </div>
@@ -71,10 +81,10 @@
       <!-- WHt your BMI result means -->
       <div class="bmi_meaning">
         <div class="human">
-          <img
+          <!-- <img
             src="./code/assets/images/image-man-eating.webp"
             alt="man eating"
-          >
+          > -->
         </div>
         <div class="result_meaning">
           <h3>What your BMI result means</h3>
