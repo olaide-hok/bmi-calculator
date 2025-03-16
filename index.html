@@ -19,11 +19,12 @@
   <body>
     <main class="container">
       <div class="d-flex hero">
+        <div class="behind"></div>
         <!-- Logo -->
         <div class="logo-wrapper">
           <img src="./code/assets/images/logo.svg" alt="bmi logo">
         </div>
-        <div class="d-flex info-cards">
+        <div class="info-cards">
           <!-- BMI Calc -->
           <section class="d-flex hero-content">
             <h1 class="title">Body Mass Index Calculator</h1>
@@ -78,17 +79,17 @@
           </section>
         </div>
       </div>
-      <!-- WHt your BMI result means -->
+      <!-- What your BMI result means -->
       <div class="bmi_meaning">
         <div class="human">
-          <!-- <img
+          <img
             src="./code/assets/images/image-man-eating.webp"
             alt="man eating"
-          > -->
+          >
         </div>
         <div class="result_meaning">
           <h3>What your BMI result means</h3>
-          <p>
+          <p class="text-preset-6-regular">
             A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
             Maintaining a healthy weight may lower your chances of experiencing
             health issues later on, such as obesity and type 2 diabetes. Aim for
@@ -105,11 +106,13 @@
           <div class="tip-img">
             <img src="./code/assets/images/icon-eating.svg" alt="eating">
           </div>
-          <h4 class="title">Healthy eating</h4>
-          <p class="desc">
-            Healthy eating promotes weight control, disease prevention, better
-            digestion, immunity, mental clarity, and mood.
-          </p>
+          <div class="text-container">
+            <h4 class="title">Healthy eating</h4>
+            <p class="desc">
+              Healthy eating promotes weight control, disease prevention, better
+              digestion, immunity, mental clarity, and mood.
+            </p>
+          </div>
         </div>
 
         <!-- Regular Exercise -->
@@ -120,11 +123,13 @@
               alt="regular exercise"
             >
           </div>
-          <h4 class="title">Regular exercise</h4>
-          <p class="desc">
-            Exercise improves fitness, aids weight control, elevates mood, and
-            reduces disease risk, fostering wellness and longevity.
-          </p>
+          <div class="text-container">
+            <h4 class="title">Regular exercise</h4>
+            <p class="desc">
+              Exercise improves fitness, aids weight control, elevates mood, and
+              reduces disease risk, fostering wellness and longevity.
+            </p>
+          </div>
         </div>
 
         <!-- Adequate Sleep -->
@@ -132,11 +137,13 @@
           <div class="tip-img">
             <img src="./code/assets/images/icon-sleep.svg" alt="sleep tip">
           </div>
-          <h4 class="title">Adequate sleep</h4>
-          <p class="desc">
-            Sleep enhances mental clarity, emotional stability, and physical
-            wellness, promoting overall restoration and rejuvenation.
-          </p>
+          <div class="text-container">
+            <h4 class="title">Adequate sleep</h4>
+            <p class="desc">
+              Sleep enhances mental clarity, emotional stability, and physical
+              wellness, promoting overall restoration and rejuvenation.
+            </p>
+          </div>
         </div>
       </div>
 
@@ -227,6 +234,6 @@
 
     <!-- Your BMI suggests you're -->
     <!-- add classification. Your ideal weight is between -->
-    <!-- add range -->.
+    <!-- add range -->
   </body>
 </html>
