@@ -55,15 +55,28 @@ main {
   &.container {
     max-width: 1440px;
 
+    .behind {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: rem(640px);
+      z-index: -1;
+      border-radius: 0px 0px 35px 35px;
+      background:
+        $gradient-1,
+        linear-gradient(90deg, rgba(214, 252, 254, 0) 0%, #d6e6fe 100%);
+    }
+
     .hero {
       flex-direction: column;
       row-gap: $spacing-400;
       padding: 2rem 1.5rem rem(61px);
+      position: relative;
       align-items: center;
       justify-content: center;
 
       .info-cards {
-        flex-direction: column;
+        @include flex-col;
         row-gap: $spacing-400;
 
         .hero-content {
@@ -76,12 +89,17 @@ main {
             @include text-preset-2-semiBold;
           }
 
+          .copy {
+            color: $grey-500;
+          }
+
           .desc {
             color: $grey-500;
           }
         }
 
         .form {
+          background-color: $white;
           border-radius: 1rem;
           box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
           @include flex-col;
@@ -112,8 +130,11 @@ main {
               flex-direction: column;
               row-gap: $spacing-200;
 
-              label {
-                color: $grey-500;
+              div {
+                flex: 1;
+                label {
+                  color: $grey-500;
+                }
               }
             }
           }
@@ -125,6 +146,115 @@ main {
             @include flex-col;
             row-gap: $spacing-300;
             padding: $spacing-400;
+          }
+        }
+      }
+    }
+
+    .bmi_meaning {
+      position: relative;
+
+      @include flex-col;
+      row-gap: $spacing-600;
+
+      .human {
+        flex: 1;
+        img {
+          height: rem(354px);
+        }
+      }
+
+      .result_meaning {
+        flex: 1;
+        @include flex-col;
+        row-gap: $spacing-400;
+        padding: 0 $spacing-300;
+
+        h3 {
+          @include text-preset-3-semiBold;
+          color: $blue-900;
+        }
+        p {
+          color: $grey-500;
+        }
+      }
+    }
+
+    .tips {
+      border-radius: 35px;
+      background:
+        $gradient-1,
+        linear-gradient(90deg, rgba(214, 252, 254, 0) 0%, #d6e6fe 25%);
+      margin-top: rem(61.61px);
+
+      padding: $spacing-700 $spacing-300;
+      @include flex-col;
+      row-gap: $spacing-500;
+
+      .content {
+        flex: 1;
+        @include flex-col;
+        row-gap: $spacing-400;
+
+        .text-container {
+          @include flex-col;
+          row-gap: $spacing-300;
+
+          h4 {
+            @include text-preset-4-semiBold;
+            color: $blue-900;
+          }
+
+          p {
+            @include text-preset-6-regular;
+            color: $grey-500;
+          }
+        }
+      }
+    }
+
+    .limitations_of_bmi {
+      padding: rem(82px) $spacing-300 $spacing-1200;
+      .limitations {
+        @include flex-col;
+        row-gap: $spacing-400;
+        text-align: center;
+
+        .title {
+          @include text-preset-3-semiBold;
+          color: $blue-900;
+        }
+        .desc {
+          color: $grey-500;
+          @include text-preset-6-regular;
+        }
+      }
+
+      .limitations_container {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: $spacing-200;
+        .limit {
+          border-radius: 16px;
+          background: $white;
+          box-shadow: 16px 32px 56px 0px rgba(143, 174, 207, 0.25);
+          padding: $spacing-300;
+          @include flex-col;
+          row-gap: $spacing-200;
+
+          .title_icon_wrapper {
+            @include flex-row;
+            column-gap: $spacing-200;
+
+            .title {
+              @include text-preset-5-semiBold;
+              color: $blue-900;
+            }
+          }
+
+          .desc {
+            @include text-preset-6-regular;
+            color: $grey-500;
           }
         }
       }
@@ -145,6 +275,12 @@ main {
         .info-cards {
           row-gap: $spacing-500;
 
+          .hero-content {
+            .title {
+              padding: 0 rem(52px);
+            }
+          }
+
           .form {
             row-gap: $spacing-400;
             padding: $spacing-400;
@@ -160,7 +296,52 @@ main {
 
             .result {
               border-radius: 16px 999px 999px 16px;
+              row-gap: $spacing-200;
             }
+          }
+        }
+      }
+
+      .bmi_meaning {
+        margin-top: $spacing-1100;
+        margin-bottom: $spacing-1200;
+
+        left: rem(-46px);
+        @include flex-row;
+        column-gap: $spacing-900;
+        align-items: center;
+
+        .human {
+          img {
+            height: rem(411.09px);
+            width: rem(360.957px);
+          }
+        }
+
+        .result_meaning {
+          padding: 0;
+        }
+      }
+
+      .tips {
+        padding: rem(60px) rem(41px);
+
+        .content {
+          @include flex-row;
+          align-items: center;
+          column-gap: $spacing-500;
+        }
+      }
+
+      .limitations_of_bmi {
+        padding: $spacing-1200 rem(43px) $spacing-1200 rem(39px);
+
+        .limitations_container {
+          grid-template-columns: 1fr 1fr;
+          column-gap: $spacing-200;
+          row-gap: $spacing-300;
+
+          .limit {
           }
         }
       }
@@ -169,6 +350,97 @@ main {
 }
 
 @media screen and (min-width: 1024px) {
+  main {
+    &.container {
+      .behind {
+        width: 68%;
+        height: rem(737px);
+      }
+      .hero {
+        row-gap: $spacing-300;
+        padding: $spacing-1100 $spacing-1800;
+        align-items: start;
+        justify-content: center;
+        // margin-bottom: rem(51px);
+
+        .info-cards {
+          @include flex-row;
+          column-gap: $spacing-500;
+
+          .hero-content {
+            flex: 1;
+            padding: $spacing-900 0;
+            row-gap: $spacing-400;
+            text-align: left;
+
+            .title {
+              @include text-preset-1-semiBold;
+              padding: 0;
+              padding-right: 3rem;
+            }
+
+            .copy {
+              color: $grey-500;
+              width: rem(465px);
+            }
+          }
+
+          .form {
+            flex: 1;
+            form {
+              row-gap: $spacing-400;
+            }
+          }
+        }
+      }
+
+      .bmi_meaning {
+        background-image: url(../assets/images/pattern-curved-line-left.svg);
+        background-repeat: no-repeat;
+        background-position: top right;
+        padding-top: rem(51px);
+        padding-bottom: $spacing-1200;
+        margin: 0 $spacing-1800;
+
+        left: 0;
+        column-gap: rem(131px);
+        align-items: center;
+
+        .human {
+          img {
+            height: rem(533px);
+            width: 100%;
+          }
+        }
+
+        .result_meaning {
+          h3 {
+            @include text-preset-2-semiBold;
+          }
+
+          p {
+            padding-right: rem(34px);
+          }
+        }
+      }
+
+      .tips {
+        padding: $spacing-1200 $spacing-1600;
+        @include flex-row;
+        column-gap: $spacing-400;
+
+        .content {
+          @include flex-col;
+          align-items: start;
+          row-gap: $spacing-600;
+
+          .desc {
+            padding-right: 0.5rem;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 1440px) {
