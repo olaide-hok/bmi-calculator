@@ -8,7 +8,7 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./assets/images/favicon-32x32.png"
+      href="./code/assets/images/favicon-32x32.png"
     >
     <link rel="stylesheet" href="./code/styles/normalize.css">
     <link rel="stylesheet" href="./code/styles/styles.css">
@@ -43,13 +43,13 @@
             <form>
               <div class="radio-wrapper">
                 <div>
-                  <input type="radio" name="metric" id="metric">
+                  <input type="radio" name="unit" id="metric">
                   <label class="text-preset-6-semiBold" for="metric"
                     >Metric</label
                   >
                 </div>
                 <div>
-                  <input type="radio" name="imperial" id="imperial">
+                  <input type="radio" name="unit" id="imperial">
                   <label class="text-preset-6-semiBold" for="imperial"
                     >Imperial</label
                   >
@@ -60,13 +60,29 @@
                   <label class="text-preset-7-regular" for="height"
                     >Height</label
                   >
-                  <input type="number" name="height" id="height">
+                  <div class="input-unit_wrapper">
+                    <span>cm</span>
+                    <input
+                      type="number"
+                      name="height"
+                      id="height"
+                      placeholder="0"
+                    >
+                  </div>
                 </div>
                 <div class="flex-col">
                   <label class="text-preset-7-regular" for="weight"
                     >Weight</label
                   >
-                  <input type="number" name="weight" id="weight">
+                  <div class="input-unit_wrapper">
+                    <span>kg</span>
+                    <input
+                      type="number"
+                      name="weight"
+                      id="weight"
+                      placeholder="0"
+                    >
+                  </div>
                 </div>
               </div>
             </form>
@@ -160,7 +176,7 @@
         </div>
         <!-- BMI Limitations container -->
         <div class="limitations_container">
-          <div class="limit">
+          <div class="gender limit">
             <div class="title_icon_wrapper">
               <img src="./code/assets/images/icon-gender.svg" alt="gender">
               <h5 class="title">Gender</h5>
@@ -173,7 +189,7 @@
           </div>
 
           <!-- Age -->
-          <div class="limit">
+          <div class="age limit">
             <div class="title_icon_wrapper">
               <img src="./code/assets/images/icon-age.svg" alt="age">
               <h5 class="title">Age</h5>
@@ -185,7 +201,7 @@
           </div>
 
           <!-- Muscle -->
-          <div class="limit">
+          <div class="muscle limit">
             <div class="title_icon_wrapper">
               <img src="./code/assets/images/icon-muscle.svg" alt="muscle">
               <h5 class="title">Muscle</h5>
@@ -197,7 +213,7 @@
           </div>
 
           <!-- Pregnancy -->
-          <div class="limit">
+          <div class="preg limit">
             <div class="title_icon_wrapper">
               <img
                 src="./code/assets/images/icon-pregnancy.svg"
@@ -213,7 +229,7 @@
           </div>
 
           <!-- Race -->
-          <div class="limit">
+          <div class="race limit">
             <div class="title_icon_wrapper">
               <img src="./code/assets/images/icon-race.svg" alt="gender">
               <h5 class="title">Race</h5>
