@@ -51,6 +51,34 @@ ul {
   list-style-type: none;
 }
 
+input[type="radio"] {
+  accent-color: $blue-500;
+
+  &:hover {
+    border: 2px solid $blue-500;
+    cursor: pointer;
+  }
+}
+
+input[type="number"] {
+  border: 1px solid $grey-500;
+  border-radius: 12px;
+  width: 100%;
+  height: rem(77px);
+  padding: $spacing-300;
+  color: $grey-500;
+  @include text-preset-4-semiBold;
+
+  &:hover {
+    border: 2px solid $blue-500;
+    cursor: pointer;
+  }
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
 main {
   &.container {
     max-width: 1440px;
@@ -127,13 +155,28 @@ main {
             }
 
             .input-wrapper {
+              @include flex-col;
               flex-direction: column;
               row-gap: $spacing-200;
 
               div {
                 flex: 1;
+                row-gap: $spacing-100;
+
                 label {
                   color: $grey-500;
+                }
+
+                .input-unit_wrapper {
+                  position: relative;
+
+                  span {
+                    @include text-preset-4-semiBold;
+                    color: $blue-500;
+                    position: absolute;
+                    right: $spacing-300;
+                    top: $spacing-300;
+                  }
                 }
               }
             }
@@ -233,7 +276,14 @@ main {
       .limitations_container {
         display: grid;
         grid-template-columns: 1fr;
+        grid-template-areas:
+          "gender"
+          "age"
+          "muscle"
+          "preg"
+          "race";
         row-gap: $spacing-200;
+
         .limit {
           border-radius: 16px;
           background: $white;
@@ -241,6 +291,22 @@ main {
           padding: $spacing-300;
           @include flex-col;
           row-gap: $spacing-200;
+
+          &.gender {
+            grid-area: gender;
+          }
+          &.age {
+            grid-area: age;
+          }
+          &.muscle {
+            grid-area: muscle;
+          }
+          &.preg {
+            grid-area: preg;
+          }
+          &.race {
+            grid-area: race;
+          }
 
           .title_icon_wrapper {
             @include flex-row;
@@ -334,15 +400,18 @@ main {
       }
 
       .limitations_of_bmi {
+        @include flex-col;
+        row-gap: $spacing-700;
         padding: $spacing-1200 rem(43px) $spacing-1200 rem(39px);
 
         .limitations_container {
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: repeat(4, 1fr);
           column-gap: $spacing-200;
           row-gap: $spacing-300;
-
-          .limit {
-          }
+          grid-template-areas:
+            "gender gender age age"
+            "muscle muscle preg preg"
+            ". race race .";
         }
       }
     }
@@ -350,6 +419,9 @@ main {
 }
 
 @media screen and (min-width: 1024px) {
+  input[type="number"] {
+    padding: $spacing-200 $spacing-300;
+  }
   main {
     &.container {
       .behind {
@@ -436,6 +508,36 @@ main {
 
           .desc {
             padding-right: 0.5rem;
+          }
+        }
+      }
+
+      .limitations_of_bmi {
+        background-image: url(../assets/images/pattern-curved-line-right.svg);
+        background-repeat: no-repeat;
+        background-position-x: 25%;
+        background-position-y: 45%;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas:
+          "lmtns lmtns lmtns gender gender ."
+          ". . age age muscle muscle"
+          ". preg preg race race .";
+        column-gap: $spacing-400;
+        row-gap: $spacing-400;
+        padding: $spacing-1300 $spacing-1600;
+
+        .limitations {
+          grid-area: lmtns;
+          text-align: left;
+          width: rem(564px);
+        }
+
+        .limitations_container {
+          display: contents;
+
+          .limit {
+            padding: $spacing-400;
           }
         }
       }
