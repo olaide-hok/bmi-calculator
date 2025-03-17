@@ -43,7 +43,7 @@
             <form>
               <div class="radio-wrapper">
                 <div>
-                  <input type="radio" name="unit" id="metric">
+                  <input type="radio" name="unit" id="metric" checked>
                   <label class="text-preset-6-semiBold" for="metric"
                     >Metric</label
                   >
@@ -55,17 +55,18 @@
                   >
                 </div>
               </div>
-              <div class="input-wrapper">
+              <!-- Metric Input Fields -->
+              <div class="d-flex metric_input-wrapper">
                 <div class="flex-col">
                   <label class="text-preset-7-regular" for="height"
                     >Height</label
                   >
                   <div class="input-unit_wrapper">
-                    <span>cm</span>
+                    <span id="height-unit">cm</span>
                     <input
                       type="number"
                       name="height"
-                      id="height"
+                      id="metric-height"
                       placeholder="0"
                     >
                   </div>
@@ -75,13 +76,66 @@
                     >Weight</label
                   >
                   <div class="input-unit_wrapper">
-                    <span>kg</span>
+                    <span id="weight-unit">kg</span>
                     <input
                       type="number"
-                      name="weight"
+                      name="metric-weight"
                       id="weight"
                       placeholder="0"
                     >
+                  </div>
+                </div>
+              </div>
+              <!-- Imperial Input Fields -->
+              <div class="d-none imperial_input-wrapper">
+                <div class="flex-col">
+                  <label class="text-preset-7-regular" for="height"
+                    >Height</label
+                  >
+                  <div class="flex-row">
+                    <div class="input-unit_wrapper">
+                      <span id="height-unit">ft</span>
+                      <input
+                        type="number"
+                        name="height"
+                        id="imperial-height-ft"
+                        placeholder="0"
+                      >
+                    </div>
+                    <div class="input-unit_wrapper">
+                      <span id="height-unit">in</span>
+                      <input
+                        type="number"
+                        name="height"
+                        id="metric-height-in"
+                        placeholder="0"
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="flex-col">
+                  <label class="text-preset-7-regular" for="weight"
+                    >Weight</label
+                  >
+                  <div class="flex-row">
+                    <div class="input-unit_wrapper">
+                      <span id="weight-unit">st</span>
+                      <input
+                        type="number"
+                        name="metric-weight-st"
+                        id="weight"
+                        placeholder="0"
+                      >
+                    </div>
+                    <div class="input-unit_wrapper">
+                      <span id="weight-unit">lbs</span>
+                      <input
+                        type="number"
+                        name="imperial-weight-lbs"
+                        id="weight"
+                        placeholder="0"
+                      >
+                    </div>
                   </div>
                 </div>
               </div>
