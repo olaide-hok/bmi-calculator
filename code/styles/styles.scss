@@ -79,6 +79,10 @@ input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
+label {
+  color: $grey-500;
+}
+
 main {
   &.container {
     max-width: 1440px;
@@ -154,29 +158,37 @@ main {
               }
             }
 
-            .input-wrapper {
-              @include flex-col;
+            .input-unit_wrapper {
+              position: relative;
+
+              span {
+                @include text-preset-4-semiBold;
+                color: $blue-500;
+                position: absolute;
+                right: $spacing-300;
+                top: $spacing-300;
+              }
+            }
+
+            .metric_input-wrapper {
               flex-direction: column;
               row-gap: $spacing-200;
 
               div {
                 flex: 1;
                 row-gap: $spacing-100;
+              }
+            }
 
-                label {
-                  color: $grey-500;
-                }
+            .imperial_input-wrapper {
+              flex-direction: column;
+              row-gap: $spacing-200;
 
-                .input-unit_wrapper {
-                  position: relative;
-
-                  span {
-                    @include text-preset-4-semiBold;
-                    color: $blue-500;
-                    position: absolute;
-                    right: $spacing-300;
-                    top: $spacing-300;
-                  }
+              div {
+                row-gap: $spacing-100;
+                div {
+                  flex: 1;
+                  column-gap: $spacing-200;
                 }
               }
             }
@@ -355,8 +367,8 @@ main {
             form {
               row-gap: $spacing-300;
 
-              .input-wrapper {
-                @include flex-row;
+              .metric_input-wrapper {
+                flex-direction: row;
                 column-gap: $spacing-300;
               }
             }
@@ -434,7 +446,6 @@ main {
         padding: $spacing-1100 $spacing-1800;
         align-items: start;
         justify-content: center;
-        // margin-bottom: rem(51px);
 
         .info-cards {
           @include flex-row;
