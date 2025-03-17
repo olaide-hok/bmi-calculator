@@ -281,7 +281,7 @@ main.container .bmi_meaning .result_meaning p {
 }
 main.container .tips {
   border-radius: 35px;
-  background: linear-gradient(90deg, rgba(214, 252, 254, 0) 0%, #d6e6fe 100%), linear-gradient(90deg, rgba(214, 252, 254, 0) 0%, #d6e6fe 25%);
+  background: linear-gradient(90deg, rgba(214, 252, 254, 0) 0%, rgba(214, 230, 254, 0.25) 100%);
   margin-top: 3.850625rem;
   padding: 3.5rem 1.5rem;
   display: flex;
@@ -497,7 +497,8 @@ main.container .limitations_of_bmi .limitations_container .limit .desc {
   main.container .bmi_meaning {
     background-image: url(../assets/images/pattern-curved-line-left.svg);
     background-repeat: no-repeat;
-    background-position: top right;
+    background-position-x: 95%;
+    background-position-y: 5%;
     padding-top: 3.1875rem;
     padding-bottom: 6rem;
     margin: 0 9rem;
@@ -508,6 +509,9 @@ main.container .limitations_of_bmi .limitations_container .limit .desc {
   main.container .bmi_meaning .human img {
     height: 33.3125rem;
     width: 100%;
+  }
+  main.container .bmi_meaning .result_meaning {
+    margin-top: 9rem;
   }
   main.container .bmi_meaning .result_meaning h3 {
     font-size: 3rem;

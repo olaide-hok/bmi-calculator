@@ -225,11 +225,12 @@ main {
 
     .tips {
       border-radius: 35px;
-      background:
-        $gradient-1,
-        linear-gradient(90deg, rgba(214, 252, 254, 0) 0%, #d6e6fe 25%);
+      background: linear-gradient(
+        90deg,
+        rgba(214, 252, 254, 0) 0%,
+        rgba(214, 230, 254, 0.25) 100%
+      );
       margin-top: rem(61.61px);
-
       padding: $spacing-700 $spacing-300;
       @include flex-col;
       row-gap: $spacing-500;
@@ -469,7 +470,8 @@ main {
       .bmi_meaning {
         background-image: url(../assets/images/pattern-curved-line-left.svg);
         background-repeat: no-repeat;
-        background-position: top right;
+        background-position-x: 95%;
+        background-position-y: 5%;
         padding-top: rem(51px);
         padding-bottom: $spacing-1200;
         margin: 0 $spacing-1800;
@@ -486,6 +488,7 @@ main {
         }
 
         .result_meaning {
+          margin-top: 9rem;
           h3 {
             @include text-preset-2-semiBold;
           }
