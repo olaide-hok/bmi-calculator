@@ -62,7 +62,7 @@
                     >Height</label
                   >
                   <div class="input-unit_wrapper">
-                    <span id="height-unit">cm</span>
+                    <span>cm</span>
                     <input
                       type="number"
                       name="height"
@@ -76,11 +76,11 @@
                     >Weight</label
                   >
                   <div class="input-unit_wrapper">
-                    <span id="weight-unit">kg</span>
+                    <span>kg</span>
                     <input
                       type="number"
-                      name="metric-weight"
-                      id="weight"
+                      name="metric"
+                      id="metric-weight"
                       placeholder="0"
                     >
                   </div>
@@ -94,7 +94,7 @@
                   >
                   <div class="flex-row">
                     <div class="input-unit_wrapper">
-                      <span id="height-unit">ft</span>
+                      <span>ft</span>
                       <input
                         type="number"
                         name="height"
@@ -103,11 +103,11 @@
                       >
                     </div>
                     <div class="input-unit_wrapper">
-                      <span id="height-unit">in</span>
+                      <span>in</span>
                       <input
                         type="number"
                         name="height"
-                        id="metric-height-in"
+                        id="imperial-height-in"
                         placeholder="0"
                       >
                     </div>
@@ -119,11 +119,11 @@
                   >
                   <div class="flex-row">
                     <div class="input-unit_wrapper">
-                      <span id="weight-unit">st</span>
+                      <span>st</span>
                       <input
                         type="number"
-                        name="metric-weight-st"
-                        id="weight"
+                        name="imperial-weight-st"
+                        id="imperial-weight-st"
                         placeholder="0"
                       >
                     </div>
@@ -132,7 +132,7 @@
                       <input
                         type="number"
                         name="imperial-weight-lbs"
-                        id="weight"
+                        id="imperial-weight-lbs"
                         placeholder="0"
                       >
                     </div>
@@ -141,10 +141,16 @@
               </div>
             </form>
             <div class="result">
-              <h4 class="text-preset-4-semiBold">Welcome!</h4>
-              <p class="text-preset-7-regular">
-                Enter your height and weight and you’ll see your BMI result here
-              </p>
+              <div class="d-flex welcome-text">
+                <h4 class="text-preset-4-semiBold">Welcome!</h4>
+                <p class="text-preset-7-regular">
+                  Enter your height and weight and you’ll see your BMI result
+                  here
+                </p>
+              </div>
+              <div class="d-none calculated">
+                <!-- Dynamically insert calculated result here  -->
+              </div>
             </div>
           </section>
         </div>
