@@ -571,6 +571,7 @@ main {
         padding: $spacing-1200 $spacing-1600;
         @include flex-row;
         column-gap: $spacing-400;
+        margin: 0;
 
         .content {
           @include flex-col;
@@ -602,6 +603,10 @@ main {
           grid-area: lmtns;
           text-align: left;
           width: rem(564px);
+
+          .title {
+            @include text-preset-2-semiBold;
+          }
         }
 
         .limitations_container {

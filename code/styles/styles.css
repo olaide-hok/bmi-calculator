@@ -587,6 +587,7 @@ main.container .limitations_of_bmi .limitations_container .limit .desc {
     display: flex;
     flex-direction: row;
     column-gap: 2rem;
+    margin: 0;
   }
   main.container .tips .content {
     display: flex;
@@ -613,6 +614,12 @@ main.container .limitations_of_bmi .limitations_container .limit .desc {
     grid-area: lmtns;
     text-align: left;
     width: 35.25rem;
+  }
+  main.container .limitations_of_bmi .limitations .title {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 110%; /* 52.8px */
+    letter-spacing: -0.15rem;
   }
   main.container .limitations_of_bmi .limitations_container {
     display: contents;
