@@ -17,21 +17,26 @@ const imperialWeightLbsInput = document.getElementById("imperial-weight-lbs");
 const welcomeTextContainer = document.querySelector(".welcome-text");
 const calculatedResultContainer = document.querySelector(".calculated");
 
+// Helper function to toggle visibility
+function toggleVisibility(showElement, hideElement) {
+  showElement.classList.remove("d-none");
+  showElement.classList.add("d-flex");
+  hideElement.classList.add("d-none");
+  hideElement.classList.remove("d-flex");
+}
+
 let unitSystemToUse = "metric";
 // Toggle visibility for either metric or imperial unit system
-[(metricOpt, imperialOpt)].forEach((opt) => {
+// Create an array of the elements
+const unitOptions = [metricOpt, imperialOpt];
+unitOptions.forEach((opt) => {
   opt.addEventListener("click", () => {
     if (opt.id === "metric") {
       unitSystemToUse = "metric";
-      imperialFieldsContainer.classList.add("d-none");
-      imperialFieldsContainer.classList.remove("d-flex");
-      metricFieldsContainer.classList.add("d-flex");
+      toggleVisibility(metricFieldsContainer, imperialFieldsContainer);
     } else if (opt.id === "imperial") {
       unitSystemToUse = "imperial";
-      imperialFieldsContainer.classList.add("d-flex");
-      imperialFieldsContainer.classList.remove("d-none");
-      metricFieldsContainer.classList.add("d-none");
-      metricFieldsContainer.classList.remove("d-flex");
+      toggleVisibility(imperialFieldsContainer, metricFieldsContainer);
     }
   });
 });
@@ -68,7 +73,7 @@ function calculateBMI(
   }
 
   // Calculate BMI
-  bmi = (weightInKg / (heightInMeters * heightInMeters)).toFixed(2);
+  bmi = (weightInKg / (heightInMeters * heightInMeters)).toFixed(1);
 
   // Determine weight classification
   let classification;
@@ -136,11 +141,10 @@ const updateResultView = (bmiValue, classify, range) => {
     `;
 };
 
-metricWeightInput.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-    const metricHeightValue = parseFloat(metricHeightInput.value.trim());
+const calculateBMIMetric = () => {
+  const metricHeightValue = parseFloat(metricHeightInput.value.trim());
     const metricWeightValue = parseFloat(metricWeightInput.value.trim());
-
+    
     if (!isNaN(metricHeightValue) && !isNaN(metricWeightValue)) {
       const { bmi, classification, healthyWeightRange } = calculateBMI(
         unitSystemToUse,
@@ -148,38 +152,50 @@ metricWeightInput.addEventListener("keydown", (event) => {
         metricWeightValue,
       );
       updateResultView(bmi, classification, healthyWeightRange);
-
-      console.log(
-        calculateBMI(unitSystemToUse, metricHeightValue, metricWeightValue),
-      );
     }
+}
+
+metricHeightInput.addEventListener('input', calculateBMIMetric)
+metricWeightInput.addEventListener('input', calculateBMIMetric)
+
+metricWeightInput.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    calculateBMIMetric()
   }
 });
 
+const calculateBMIImperial = () => {
+  const imperialHeightFtValue = parseFloat(
+    imperialHeightFtInput.value.trim(),
+  );
+  const imperialHeightInValue = parseFloat(
+    imperialHeightInInput.value.trim(),
+  );
+  const imperialWeightStValue = parseFloat(
+    imperialWeightStInput.value.trim(),
+  );
+  const imperialWeightLbsValue = parseFloat(
+    imperialWeightLbsInput.value.trim(),
+  );
+  
+  if (!isNaN(imperialHeightFtValue) && !isNaN(imperialHeightInValue) && !isNaN(imperialWeightStValue) && !isNaN(imperialWeightLbsValue)) {
+    const { bmi, classification, healthyWeightRangeImperial } = calculateBMI(
+      unitSystemToUse,
+      imperialHeightFtValue,
+      imperialWeightStValue,
+      imperialHeightInValue,
+      imperialWeightLbsValue,
+    );
+    updateResultView(bmi, classification, healthyWeightRangeImperial);
+  }
+}
+imperialHeightFtInput.addEventListener('input', calculateBMIImperial)
+imperialHeightInInput.addEventListener('input', calculateBMIImperial)
+imperialWeightStInput.addEventListener('input', calculateBMIImperial)
+imperialWeightLbsInput.addEventListener('input', calculateBMIImperial)
+
 imperialWeightLbsInput.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
-    const imperialHeightFtValue = parseFloat(
-      imperialHeightFtInput.value.trim(),
-    );
-    const imperialHeightInValue = parseFloat(
-      imperialHeightInInput.value.trim(),
-    );
-    const imperialWeightStValue = parseFloat(
-      imperialWeightStInput.value.trim(),
-    );
-    const imperialWeightLbsValue = parseFloat(
-      imperialWeightLbsInput.value.trim(),
-    );
-
-    if (!isNaN(imperialHeightFtValue) && !isNaN(imperialWeightStValue)) {
-      const { bmi, classification, healthyWeightRangeImperial } = calculateBMI(
-        unitSystemToUse,
-        imperialHeightFtValue,
-        imperialWeightStValue,
-        imperialHeightInValue,
-        imperialWeightLbsValue,
-      );
-      updateResultView(bmi, classification, healthyWeightRangeImperial);
-    }
+    calculateBMIImperial()
   }
 });
